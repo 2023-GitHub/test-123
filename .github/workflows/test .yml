@@ -1,0 +1,24 @@
+name: Create New Branch
+
+on:
+  push:
+    branches:
+      - main  # Modify this line with your desired trigger branch
+
+jobs:
+  create_branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create new branch
+        run: |
+          git checkout -b new branch
+          git push origin new branch
+
+
+
+
+
