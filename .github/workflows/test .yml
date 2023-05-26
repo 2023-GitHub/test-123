@@ -3,7 +3,7 @@ name: Create New Branch
 on:
   push:
     branches:
-      - main  # Modify this line with your desired trigger branch
+      - test-123  # Modify this line with your desired trigger branch
 
 jobs:
   create_branch:
@@ -15,8 +15,11 @@ jobs:
 
       - name: Create new branch
         run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git checkout -b new branch
           git push origin new branch
+          
 
 
 
