@@ -3,7 +3,7 @@ name: Create Branch
 on:
   push:
     branches:
-      - main
+      - test-123
 
 jobs:
   create_branch:
