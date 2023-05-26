@@ -1,21 +1,16 @@
-name: Create Branch
+name: Create New Branch
 
 on:
-  push:
-    branches:
-      -main
+  push:
+    branches:
+      - master
 
 jobs:
-  create_branch:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Create branch
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git checkout -b test-123
-          git push origin test-123
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create New Branch
+        run: |
+          git checkout -b new-branch
+          git push -u origin new-branch
